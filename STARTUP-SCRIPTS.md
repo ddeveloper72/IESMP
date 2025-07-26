@@ -13,11 +13,13 @@ This directory contains platform-specific startup scripts for the DomiSMP servic
 All scripts use relative paths and will work from any directory where the DomiSMP project is cloned.
 
 ### Windows
+
 ```bash
 start-smp-https.bat
 ```
 
 ### Linux/Mac/Git Bash
+
 ```bash
 ./start-smp-https.sh
 ```
@@ -25,6 +27,7 @@ start-smp-https.bat
 ## Configuration
 
 The scripts automatically locate the configuration file at:
+
 - `./smp-config/smp.config.properties` (relative to script location)
 
 No hardcoded paths are used, making the scripts portable across different user environments and operating systems.
@@ -39,6 +42,7 @@ For additional customization, you can set these environment variables before run
 ## Docker Alternative
 
 For containerized deployment, use:
+
 ```bash
 docker-compose up
 ```
