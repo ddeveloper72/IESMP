@@ -1,0 +1,19 @@
+FROM openjdk:17-jdk-slim
+
+# Install MySQL client for database connection
+RUN apt-get update && apt-get install -y mysql-client && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+
+# Copy the built JAR file
+COPY smp-springboot/target/smp-springboot-5.2-SNAPSHOT-exec.jar app.jar
+COPY smp-config/ smp-config/
+
+# Create logs directory
+RUN mkdir -p smp-config/logs
+
+# Expose port
+EXPOSE 8080
+
+# Run the application
+CMD ["java", "-Xms512m", "-Xmx2048m", "-Dsmp.configuration.file=./smp-config/smp.config.properties", "-jar", "app.jar"]

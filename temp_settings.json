@@ -1,0 +1,6 @@
+
+{
+    "fabric8-analytics.enable": false,
+    "redhat.telemetry.enabled": false,
+    "java.compile.nullAnalysis.mode": "disabled"
+}

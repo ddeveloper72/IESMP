@@ -39,3 +39,60 @@ cargo
 ## maven-shade-plugin generated files
 dependency-reduced-pom.xml
 /.idea/
+
+# Environment variables and secrets
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Docker volumes and sensitive data
+data/
+volumes/
+mysql-data/
+ireland-config-backup/
+
+# Security sensitive files
+keystore.*
+*.jks
+*.p12
+*.pem
+*.key
+*.crt
+certificates/
+secrets/
+
+# Configuration files with credentials
+application-*.yml
+application-*.properties
+*-credentials.xml
+
+# Custom Ireland eHealth configuration scripts (contain passwords)
+setup-ireland-config.sh
+restore-ireland-config.sh
+backup-ireland-config.sh
+setup-persistent-volumes.sh
+
+# Database backups (may contain sensitive data)
+*.sql
+*.backup
+*.bak
+
+# Windows reserved device names
+nul
+con
+prn
+aux
+com*
+lpt*
+
+# Keystores and certificates (sensitive cryptographic material)
+*.p12
+*.p12.*
+*.jks
+*.keystore
+*.truststore
+encryptionPrivateKey.*
+smp-keystore.*
+smp-truststore.*

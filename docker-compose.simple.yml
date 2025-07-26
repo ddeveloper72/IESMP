@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  domismp-simple:
+    build:
+      context: .
+      dockerfile: Dockerfile.simple
+    ports:
+      - '8080:8080'
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+    # Connect to host MySQL database
+    network_mode: 'host'
+    volumes:
+      - ./smp-config:/app/smp-config
+    restart: unless-stopped
+
+  # If you want to run MySQL in Docker too (optional)
+  # mysql:
+  #   image: mysql:8.0
+  #   environment:
+  #     MYSQL_ROOT_PASSWORD: root
+  #     MYSQL_DATABASE: smpdb
+  #     MYSQL_USER: smp
+  #     MYSQL_PASSWORD: secret
+  #   ports:
+  #     - "3306:3306"
+  #   volumes:
+  #     - mysql_data:/var/lib/mysql
+  #   restart: unless-stopped
+# volumes:
+#   mysql_data:
