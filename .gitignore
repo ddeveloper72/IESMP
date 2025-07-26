@@ -96,3 +96,8 @@ lpt*
 encryptionPrivateKey.*
 smp-keystore.*
 smp-truststore.*
+
+# Log files (may contain sensitive paths and information)
+*.log
+smp-complete-log.txt
+application.log
